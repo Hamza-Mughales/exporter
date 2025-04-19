@@ -24,4 +24,10 @@ class Company extends Model
     {
         return $this->hasMany(Order::class);
     }
+
+    // Add a query scope for the current company
+    public function scopeCurrent($query, $companyId)
+    {
+        return $query->where('id', $companyId);
+    }
 }

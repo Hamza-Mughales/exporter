@@ -26,7 +26,7 @@ class OrderResource extends Resource
                 Forms\Components\Select::make('product_id')
                     ->relationship('product', 'name')
                     ->native(false)
-                    ->searchable()
+                    // ->searchable()
                     ->required(),
                 Forms\Components\TextInput::make('quantity')
                     ->numeric()
