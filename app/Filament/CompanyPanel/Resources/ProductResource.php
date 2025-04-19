@@ -3,11 +3,13 @@
 namespace App\Filament\CompanyPanel\Resources;
 
 use App\Filament\CompanyPanel\Resources\ProductResource\Pages;
+use App\Filament\Exports\ProductExporter;
 use App\Models\Product;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Actions\ExportAction;
 use Filament\Tables\Table;
 
 class ProductResource extends Resource
@@ -50,6 +52,10 @@ class ProductResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
+            ])
+            ->headerActions([
+                ExportAction::make()
+                    ->exporter(ProductExporter::class)
             ]);
     }
 

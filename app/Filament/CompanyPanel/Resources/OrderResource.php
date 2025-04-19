@@ -4,11 +4,13 @@ namespace App\Filament\CompanyPanel\Resources;
 
 use App\Filament\CompanyPanel\Resources\OrderResource\Pages;
 use App\Filament\CompanyPanel\Resources\OrderResource\RelationManagers;
+use App\Filament\Exports\OrderExporter;
 use App\Models\Order;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Actions\ExportAction;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -54,6 +56,10 @@ class OrderResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
+            ])
+            ->headerActions([
+                ExportAction::make()
+                    ->exporter(OrderExporter::class)
             ]);
     }
 

@@ -32,6 +32,7 @@ class CompanyPanelProvider extends PanelProvider
             ->tenant(Company::class)
             ->tenantRegistration(RegisterCompany::class)
             ->tenantProfile(EditCompanyProfile::class)
+            ->databaseNotifications()
             ->colors([
                 'primary' => Color::Amber,
             ])
