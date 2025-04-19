@@ -6,6 +6,7 @@ use App\Models\Product;
 use Filament\Actions\Exports\ExportColumn;
 use Filament\Actions\Exports\Exporter;
 use Filament\Actions\Exports\Models\Export;
+use Filament\Facades\Filament;
 
 class ProductExporter extends Exporter
 {
@@ -20,8 +21,6 @@ class ProductExporter extends Exporter
             ExportColumn::make('description'),
             ExportColumn::make('price'),
             ExportColumn::make('company_id'),
-            ExportColumn::make('created_at'),
-            ExportColumn::make('updated_at'),
         ];
     }
 

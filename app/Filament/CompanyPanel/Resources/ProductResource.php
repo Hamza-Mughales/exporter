@@ -52,10 +52,6 @@ class ProductResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ])
-            ->headerActions([
-                ExportAction::make()
-                    ->exporter(ProductExporter::class)
             ]);
     }
 
